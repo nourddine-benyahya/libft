@@ -6,12 +6,11 @@
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:12:33 by nbenyahy         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:10:21 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strncat(char *s1, const char *s2, size_t size)
 {

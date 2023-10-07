@@ -6,12 +6,11 @@
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:12:17 by nbenyahy         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:10:06 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

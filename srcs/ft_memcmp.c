@@ -6,11 +6,11 @@
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:11:41 by nbenyahy         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:09:15 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
