@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:10:06 by nbenyahy         ###   ########.fr       */
+/*   Updated: 2023/09/02 09:40:23 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_isalpha(int a)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	dst_len2;
-	size_t	i;
-
-	i = 0;
-	dst_len = ft_strlen(dst);
-	dst_len2 = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_len >= size || size == 0)
-		return (dst_len + size);
-	while (src[i] != '\0' && dst_len < size - 1)
-	{
-		dst[dst_len] = src[i];
-		dst_len++;
-		i++;
-	}
-	dst[dst_len] = '\0';
-	return (dst_len2 + src_len);
+	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+		return (1);
+	return (0);
 }
