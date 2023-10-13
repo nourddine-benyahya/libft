@@ -1,34 +1,29 @@
-SRCS		= $(wildcard ft_*.c)
+SRC = $(wildcard ft_*.c)
 
-SRCS_BONUS 	= $(wildcard ft_*_bonus.c)
+BNS = $(wildcard ft_*_bonus.c)
 
-OBJS		= $(SRCS:.c=.o)
-OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-NAME		= libft.a
+OBJB = $(BNS:.c=.o)
 
-CC			= gcc
+CC = gcc
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-RM			= rm -f
+NAME = libft.a
 
-%.o : %.c
-			$(CC) $(CFLAGS) -c $< -o $(<:c=o)
+$(NAME) : $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
-$(NAME):	$(OBJS)
-			ar rcs $(NAME) $(OBJS)
-			ranlib $(NAME)
+all : $(NAME)
 
-all:		$(NAME)
+bonus : $(OBJB)
+	ar rc $(NAME) $(OBJB)
 
-bonus: 		$(NAME) $(OBJS_BONUS)
-			ar rcs $(NAME) $(OBJS_BONUS)
+clean :
+	rm -rf $(OBJ)
 
-clean:
-			$(RM) $(OBJS) $(OBJS_BONUS)
+fclean : clean
+	rm -rf $(NAME)
 
-fclean:		clean
-			$(RM) $(NAME)
-
-re:			fclean all
+re : fclean all
