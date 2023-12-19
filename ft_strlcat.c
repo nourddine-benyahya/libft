@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:10:06 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/06 13:13:09 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/16 21:16:19 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;
-	size_t	src_len;
-	size_t	dst_len2;
+	size_t	org_dst_len;
 	size_t	i;
 
 	i = 0;
 	dst_len = ft_strlen(dst);
-	dst_len2 = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_len >= size || size == 0)
-		return (src_len + size);
+	org_dst_len = ft_strlen(dst);
+	if (dst_len >= size)
+		return (ft_strlen(src) + size);
 	while (src[i] != '\0' && dst_len < size - 1)
 	{
 		dst[dst_len] = src[i];
@@ -32,5 +30,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[dst_len] = '\0';
-	return (dst_len2 + src_len);
+	return (org_dst_len + ft_strlen(src));
 }

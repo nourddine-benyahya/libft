@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:11:18 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/04 15:30:56 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/17 09:58:29 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if (a >= '0' && a <= '9')
-		return (1);
-	return (0);
+	return (c >= '0' && c <= '9');
 }

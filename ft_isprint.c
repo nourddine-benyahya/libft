@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:11:25 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/04 15:51:48 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/17 09:58:44 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int a)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-	if (a >= 32 && a <= 126)
-		return (1);
-	return (0);
+	return (c >= 32 && c <= 126);
 }

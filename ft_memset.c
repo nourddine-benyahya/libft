@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:09:34 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/07 10:41:31 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/17 16:30:24 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		((char *)str)[i] = c;
+		((unsigned char *)s)[i] = (unsigned char)c;
 		i++;
 	}
-	return (str);
+	return (s);
 }

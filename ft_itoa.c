@@ -5,76 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/09 19:15:24 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/09 21:56:07 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/13 12:07:23 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_power(int i)
+static size_t	nbrlen(int n)
 {
-	int	res;
+	size_t	size;
 
-	res = 1;
-	i--;
-	while (i--)
-		res = res * 10;
-	return (res);
-}
-
-int	ft_nbrlen(int i)
-{
-	int	j;
-
-	j = 0;
-	if (i < 0)
-		j++;
-	if (i == 0)
-		return (1);
-	while (i != 0)
-	{
-		i /= 10;
-		j++;
-	}
-	return (j);
-}
-
-void	ft_insert(char *str, int n)
-{
-	int	len;
-	int	power;
-	int	i;
-
-	len = ft_nbrlen(n);
-	power = ft_power(len);
-	i = 0;
+	size = 0;
 	if (n < 0)
+		size++;
+	while (n)
 	{
-		str[i++] = '-';
-		n *= -1;
-		power /= 10;
+		n /= 10;
+		size++;
 	}
-	while (power != 0)
-	{
-		str[i] = (n / power) + '0';
-		n -= (n / power) * power ;
-		power /= 10;
-		i++;
-	}
-	str[i] = '\0';
+	return (size);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*ptr;
+	size_t	size;
+	char	*res;
 
-	if (n == -2147483648)
+	if (n == 0)
+		return (ft_strdup("0"));
+	else if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	ptr = (char *)malloc(sizeof(char) * (ft_nbrlen(n) + 1));
-	if (!ptr)
+	size = nbrlen(n);
+	res = (char *)malloc((size + 1) * sizeof(char));
+	if (!res)
 		return (NULL);
-	else
-		ft_insert(ptr, n);
-	return (ptr);
+	if (n < 0)
+	{
+		n = -n;
+		res[0] = '-';
+	}
+	res[size] = '\0';
+	while (n)
+	{
+		size--;
+		res[size] = n % 10 + 48;
+		n /= 10;
+	}
+	return (res);
 }

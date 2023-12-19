@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:10:32 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/04 17:52:17 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/16 17:10:42 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
 	i = 0;
-	while (haystack[i] != '\0' && i < size)
+	if (*little == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j] != '\0'
-			&& i + j < size)
+		while ((little[j] == big[i + j]) && (i + j < len) 
+			&& little[j] != '\0' && big[i + j] != '\0')
 			j++;
-		if (needle[j] == '\0')
-			return ((char *)(haystack + i));
+		if (little[j] == '\0')
+			return ((char *)big + i);
 		i++;
 	}
 	return (NULL);

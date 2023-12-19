@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:09:28 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/07 18:24:18 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/15 19:26:35 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (dest == NULL && src == NULL)
+	if (!dest && !src)
 		return (NULL);
-	if (dest > src)
+	if (src < dest)
 	{
 		while (n--)
-		{
-			((char *)dest)[n] = ((char *)src)[n];
-		}
+			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
 	}
 	else
 		ft_memcpy(dest, src, n);

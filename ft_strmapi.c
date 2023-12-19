@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/11 13:07:47 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/09 16:25:42 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/15 12:04:27 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*ptr;
-	int		i;
+	size_t	i;
+	size_t	len;
 
-	ptr = (char *)malloc(ft_strlen(s) + 1);
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	i = 0;
+	ptr = (char *)malloc((len + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
-	i = 0;
 	while (s[i])
 	{
 		ptr[i] = f(i, s[i]);

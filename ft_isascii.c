@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:10:57 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/04 15:40:54 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/17 09:58:07 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int a)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-	if (a >= 0 && a <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }

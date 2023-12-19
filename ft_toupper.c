@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/04 14:13:03 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/04 16:27:00 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/13 12:08:25 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int a)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	if (a >= 97 && a <= 122)
-		return (a - 32);
-	return (a);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

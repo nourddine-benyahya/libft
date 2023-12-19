@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/10 17:18:05 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/07 22:51:47 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/19 19:06:07 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strcat2(const char *s1, char const *s2, char *ptr)
+static void	concat(char const *s1, char const *s2, char *ptr)
 {
-	int		j;
-	int		k;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
 	j = 0;
-	k = 0;
-	while (s1[k] != '\0')
+	while (s1[i])
 	{
-		ptr[j] = s1[k];
+		ptr[j] = s1[i];
+		i++;
 		j++;
-		k++;
 	}
-	k = 0;
-	while (s2[k] != '\0')
+	i = 0;
+	while (s2[i])
 	{
-		ptr[j] = s2[k];
-		k++;
+		ptr[j] = s2[i];
+		i++;
 		j++;
 	}
 	ptr[j] = '\0';
@@ -37,13 +37,17 @@ void	ft_strcat2(const char *s1, char const *s2, char *ptr)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	s1len;
+	size_t	s2len;
 	char	*ptr;
-	size_t	i;
 
-	i = (ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char);
-	ptr = (char *)malloc(i);
+	if (!s2 || !s1)
+		return (NULL);
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	ptr = (char *)malloc(sizeof(char) * (s1len + s2len + 1));
 	if (!ptr)
 		return (NULL);
-	ft_strcat2(s1, s2, ptr);
+	concat(s1, s2, ptr);
 	return (ptr);
 }

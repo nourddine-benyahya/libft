@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:10:01 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/07 19:58:51 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/13 12:07:59 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*ft_strdup(const char *s)
 {
 	char	*ptr;
-	int		i;
+	size_t	i;
 	size_t	len;
 
-	i = 0;
 	len = ft_strlen(s);
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	while (s[i] != '\0')
+	i = 0;
+	while (s[i])
 	{
 		ptr[i] = s[i];
 		i++;

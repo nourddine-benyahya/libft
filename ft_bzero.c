@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenyahy <nbenyahy@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 12:20:14 by nbenyahy          #+#    #+#             */
-/*   Updated: 2023/10/05 12:08:44 by nbenyahy         ###   ########.fr       */
+/*   Created: 2023/12/07 13:03:09 by nbenyahy          #+#    #+#             */
+/*   Updated: 2023/12/15 09:57:47 by nbenyahy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n--)
-	{
-		((char *)s)[n] = 0;
-	}
+	ft_memset(s, 0, n);
 }
